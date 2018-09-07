@@ -1,0 +1,193 @@
+cabal: Entering directory '/var/folders/6x/mymd747n20v3rgb4cmt0l8sh0000gn/T/cabal-tmp-3541/Yampa-0.11.1'
+Configuring Yampa-0.11.1...
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for Yampa-0.11.1..
+Building library for Yampa-0.11.1..
+[ 1 of 30] Compiling FRP.Yampa.Diagnostics ( src/FRP/Yampa/Diagnostics.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Diagnostics.o )
+[ 2 of 30] Compiling FRP.Yampa.Forceable ( src/FRP/Yampa/Forceable.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Forceable.o )
+[ 3 of 30] Compiling FRP.Yampa.Event  ( src/FRP/Yampa/Event.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Event.o )
+[ 4 of 30] Compiling FRP.Yampa.InternalCore ( src/FRP/Yampa/InternalCore.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/InternalCore.o )
+[ 5 of 30] Compiling FRP.Yampa.Basic  ( src/FRP/Yampa/Basic.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Basic.o )
+[ 6 of 30] Compiling FRP.Yampa.Internals ( src/FRP/Yampa/Internals.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Internals.o )
+[ 7 of 30] Compiling FRP.Yampa.MergeableRecord ( src/FRP/Yampa/MergeableRecord.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/MergeableRecord.o )
+[ 8 of 30] Compiling FRP.Yampa.Miscellany ( src/FRP/Yampa/Miscellany.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Miscellany.o )
+[ 9 of 30] Compiling FRP.Yampa.Random ( src/FRP/Yampa/Random.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Random.o )
+[10 of 30] Compiling FRP.Yampa.Scan   ( src/FRP/Yampa/Scan.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Scan.o )
+[11 of 30] Compiling FRP.Yampa.Delays ( src/FRP/Yampa/Delays.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Delays.o )
+[12 of 30] Compiling FRP.Yampa.Hybrid ( src/FRP/Yampa/Hybrid.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Hybrid.o )
+[13 of 30] Compiling FRP.Yampa.Simulation ( src/FRP/Yampa/Simulation.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Simulation.o )
+[14 of 30] Compiling FRP.Yampa.Switches ( src/FRP/Yampa/Switches.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Switches.o )
+[15 of 30] Compiling FRP.Yampa.EventS ( src/FRP/Yampa/EventS.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/EventS.o )
+[16 of 30] Compiling FRP.Yampa.Conditional ( src/FRP/Yampa/Conditional.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Conditional.o )
+[17 of 30] Compiling FRP.Yampa.VectorSpace ( src/FRP/Yampa/VectorSpace.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/VectorSpace.o )
+[18 of 30] Compiling FRP.Yampa.Vector3 ( src/FRP/Yampa/Vector3.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Vector3.o )
+[19 of 30] Compiling FRP.Yampa.Vector2 ( src/FRP/Yampa/Vector2.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Vector2.o )
+[20 of 30] Compiling FRP.Yampa.Integration ( src/FRP/Yampa/Integration.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Integration.o )
+[21 of 30] Compiling FRP.Yampa.Time   ( src/FRP/Yampa/Time.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Time.o )
+[22 of 30] Compiling FRP.Yampa.Loop   ( src/FRP/Yampa/Loop.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Loop.o )
+[23 of 30] Compiling FRP.Yampa.AffineSpace ( src/FRP/Yampa/AffineSpace.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/AffineSpace.o )
+[24 of 30] Compiling FRP.Yampa.Point3 ( src/FRP/Yampa/Point3.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Point3.o )
+[25 of 30] Compiling FRP.Yampa.Point2 ( src/FRP/Yampa/Point2.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Point2.o )
+[26 of 30] Compiling FRP.Yampa.Geometry ( src/FRP/Yampa/Geometry.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Geometry.o )
+[27 of 30] Compiling FRP.Yampa        ( src/FRP/Yampa.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa.o )
+[28 of 30] Compiling FRP.Yampa.Task   ( src/FRP/Yampa/Task.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Task.o )
+[29 of 30] Compiling FRP.Yampa.Core   ( src/FRP/Yampa/Core.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Core.o )
+[30 of 30] Compiling FRP.Yampa.Utilities ( src/FRP/Yampa/Utilities.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Utilities.o )
+[ 1 of 30] Compiling FRP.Yampa.Diagnostics ( src/FRP/Yampa/Diagnostics.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Diagnostics.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[ 2 of 30] Compiling FRP.Yampa.Forceable ( src/FRP/Yampa/Forceable.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Forceable.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[ 3 of 30] Compiling FRP.Yampa.Event  ( src/FRP/Yampa/Event.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Event.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[ 4 of 30] Compiling FRP.Yampa.InternalCore ( src/FRP/Yampa/InternalCore.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/InternalCore.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[ 5 of 30] Compiling FRP.Yampa.Basic  ( src/FRP/Yampa/Basic.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Basic.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[ 6 of 30] Compiling FRP.Yampa.Internals ( src/FRP/Yampa/Internals.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Internals.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[ 7 of 30] Compiling FRP.Yampa.MergeableRecord ( src/FRP/Yampa/MergeableRecord.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/MergeableRecord.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[ 8 of 30] Compiling FRP.Yampa.Miscellany ( src/FRP/Yampa/Miscellany.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Miscellany.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[ 9 of 30] Compiling FRP.Yampa.Random ( src/FRP/Yampa/Random.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Random.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[10 of 30] Compiling FRP.Yampa.Scan   ( src/FRP/Yampa/Scan.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Scan.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[11 of 30] Compiling FRP.Yampa.Delays ( src/FRP/Yampa/Delays.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Delays.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[12 of 30] Compiling FRP.Yampa.Hybrid ( src/FRP/Yampa/Hybrid.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Hybrid.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[13 of 30] Compiling FRP.Yampa.Simulation ( src/FRP/Yampa/Simulation.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Simulation.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[14 of 30] Compiling FRP.Yampa.Switches ( src/FRP/Yampa/Switches.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Switches.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[15 of 30] Compiling FRP.Yampa.EventS ( src/FRP/Yampa/EventS.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/EventS.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[16 of 30] Compiling FRP.Yampa.Conditional ( src/FRP/Yampa/Conditional.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Conditional.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[17 of 30] Compiling FRP.Yampa.VectorSpace ( src/FRP/Yampa/VectorSpace.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/VectorSpace.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[18 of 30] Compiling FRP.Yampa.Vector3 ( src/FRP/Yampa/Vector3.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Vector3.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[19 of 30] Compiling FRP.Yampa.Vector2 ( src/FRP/Yampa/Vector2.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Vector2.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[20 of 30] Compiling FRP.Yampa.Integration ( src/FRP/Yampa/Integration.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Integration.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[21 of 30] Compiling FRP.Yampa.Time   ( src/FRP/Yampa/Time.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Time.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[22 of 30] Compiling FRP.Yampa.Loop   ( src/FRP/Yampa/Loop.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Loop.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[23 of 30] Compiling FRP.Yampa.AffineSpace ( src/FRP/Yampa/AffineSpace.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/AffineSpace.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[24 of 30] Compiling FRP.Yampa.Point3 ( src/FRP/Yampa/Point3.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Point3.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[25 of 30] Compiling FRP.Yampa.Point2 ( src/FRP/Yampa/Point2.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Point2.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[26 of 30] Compiling FRP.Yampa.Geometry ( src/FRP/Yampa/Geometry.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Geometry.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[27 of 30] Compiling FRP.Yampa        ( src/FRP/Yampa.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[28 of 30] Compiling FRP.Yampa.Task   ( src/FRP/Yampa/Task.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Task.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[29 of 30] Compiling FRP.Yampa.Core   ( src/FRP/Yampa/Core.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Core.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[30 of 30] Compiling FRP.Yampa.Utilities ( src/FRP/Yampa/Utilities.hs, dist/dist-sandbox-72cc4717/build/FRP/Yampa/Utilities.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+ignoring (possibly broken) abi-depends field for packages
+Preprocessing library for Yampa-0.11.1..
+Running Haddock on library for Yampa-0.11.1..
+Haddock coverage:
+ 100% (  3 /  3) in 'FRP.Yampa.Diagnostics'
+ 100% (  2 /  2) in 'FRP.Yampa.Forceable'
+ 100% ( 25 / 25) in 'FRP.Yampa.Event'
+ 100% ( 11 / 11) in 'FRP.Yampa.Basic'
+ 100% (  2 /  2) in 'FRP.Yampa.Internals'
+ 100% (  7 /  7) in 'FRP.Yampa.MergeableRecord'
+ 100% ( 36 / 36) in 'FRP.Yampa.Miscellany'
+ 100% (  8 /  8) in 'FRP.Yampa.Random'
+ 100% (  3 /  3) in 'FRP.Yampa.Scan'
+ 100% (  7 /  7) in 'FRP.Yampa.Delays'
+ 100% ( 14 / 14) in 'FRP.Yampa.Hybrid'
+ 100% ( 12 / 12) in 'FRP.Yampa.Simulation'
+ 100% ( 30 / 30) in 'FRP.Yampa.Switches'
+ 100% ( 27 / 27) in 'FRP.Yampa.EventS'
+ 100% (  3 /  3) in 'FRP.Yampa.Conditional'
+ 100% (  2 /  2) in 'FRP.Yampa.VectorSpace'
+ 100% ( 13 / 13) in 'FRP.Yampa.Vector3'
+ 100% ( 11 / 11) in 'FRP.Yampa.Vector2'
+ 100% (  9 /  9) in 'FRP.Yampa.Integration'
+ 100% (  3 /  3) in 'FRP.Yampa.Time'
+ 100% (  4 /  4) in 'FRP.Yampa.Loop'
+ 100% (  2 /  2) in 'FRP.Yampa.AffineSpace'
+ 100% (  5 /  5) in 'FRP.Yampa.Point3'
+ 100% (  4 /  4) in 'FRP.Yampa.Point2'
+ 100% (  7 /  7) in 'FRP.Yampa.Geometry'
+ 100% (144 /144) in 'FRP.Yampa'
+ 100% ( 15 / 15) in 'FRP.Yampa.Task'
+  95% ( 18 / 19) in 'FRP.Yampa.Core'
+  Missing documentation for:
+    loop
+ 100% (  2 /  2) in 'FRP.Yampa.Utilities'
+Documentation created: dist/dist-sandbox-72cc4717/doc/html/Yampa/index.html
+Installing library in /Users/scott/projects/mutorere/.cabal-sandbox/lib/x86_64-osx-ghc-8.4.3/Yampa-0.11.1-AIdeCNLqD6XCM2hL4irfeW
+cabal: Leaving directory '/var/folders/6x/mymd747n20v3rgb4cmt0l8sh0000gn/T/cabal-tmp-3541/Yampa-0.11.1'

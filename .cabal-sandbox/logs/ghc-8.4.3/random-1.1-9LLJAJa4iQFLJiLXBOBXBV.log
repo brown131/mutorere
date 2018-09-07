@@ -1,0 +1,41 @@
+cabal: Entering directory '/var/folders/6x/mymd747n20v3rgb4cmt0l8sh0000gn/T/cabal-tmp-3541/random-1.1'
+Warning: random.cabal:15:2: Tabs used as indentation at 15:2, 16:2, 17:2
+Configuring random-1.1...
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for random-1.1..
+Building library for random-1.1..
+[1 of 1] Compiling System.Random    ( System/Random.hs, dist/dist-sandbox-72cc4717/build/System/Random.o )
+
+System/Random.hs:43:1: warning: [-Wtabs]
+    Tab character found here, and in 74 further locations.
+    Please use spaces instead.
+   |
+43 |         (
+   | ^^^^^^^^
+[1 of 1] Compiling System.Random    ( System/Random.hs, dist/dist-sandbox-72cc4717/build/System/Random.p_o )
+
+System/Random.hs:43:1: warning: [-Wtabs]
+    Tab character found here, and in 74 further locations.
+    Please use spaces instead.
+   |
+43 |         (
+   | ^^^^^^^^
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+ignoring (possibly broken) abi-depends field for packages
+Preprocessing library for random-1.1..
+Running Haddock on library for random-1.1..
+
+System/Random.hs:43:1: warning: [-Wtabs]
+    Tab character found here, and in 74 further locations.
+    Please use spaces instead.
+   |
+43 |         (
+   | ^^^^^^^^
+Haddock coverage:
+Cannot find documentation for: $intro
+ 100% ( 16 / 16) in 'System.Random'
+Documentation created: dist/dist-sandbox-72cc4717/doc/html/random/index.html
+Installing library in /Users/scott/projects/mutorere/.cabal-sandbox/lib/x86_64-osx-ghc-8.4.3/random-1.1-9LLJAJa4iQFLJiLXBOBXBV
+cabal: Leaving directory '/var/folders/6x/mymd747n20v3rgb4cmt0l8sh0000gn/T/cabal-tmp-3541/random-1.1'

@@ -1,0 +1,28 @@
+Name:                mutorere
+Version:             1.0.0
+License:             MIT
+License-file:        LICENSE
+Author:              Scott Brown
+Maintainer:          brown131@yahoo.com
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Stability:           experimental
+Category:            Graphics
+Description:
+        Mu Torere game
+
+Executable mutorere
+  Main-is:        Main.hs
+  other-modules:  GlossInterface
+  hs-source-dirs: src
+
+  Build-depends:
+                base             >= 4.8 && < 4.12
+              , gloss            >= 1.12.0.0
+              , gloss-rendering  >= 1.12.0.0
+              , Yampa            >= 0.11.1
+  ghc-options:
+        -O2
+        -Wall
+        -threaded
+        -rtsopts

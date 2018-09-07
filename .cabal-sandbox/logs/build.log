@@ -1,0 +1,21 @@
+
+package: Yampa-0.11.1
+os: osx
+arch: x86_64
+compiler: ghc-8.4.3
+client: cabal-install-2.2.0.0
+flags: -examples -test-doc-coverage -test-hlint test-regression
+dependencies: base-4.11.1.0 deepseq-1.4.3.0 random-1.1
+install-outcome: InstallOk
+docs-outcome: Ok
+tests-outcome: NotTried
+
+package: random-1.1
+os: osx
+arch: x86_64
+compiler: ghc-8.4.3
+client: cabal-install-2.2.0.0
+dependencies: base-4.11.1.0 time-1.8.0.2
+install-outcome: InstallOk
+docs-outcome: Ok
+tests-outcome: NotTried
