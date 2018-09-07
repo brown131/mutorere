@@ -20,7 +20,7 @@ Executable mutorere
                 base             >= 4.8 && < 4.12
               , gloss            >= 1.12.0.0
               , gloss-rendering  >= 1.12.0.0
-              , Yampa            >= 0.11.1
+              , elerea           >= 2.9.0
   ghc-options:
         -O2
         -Wall

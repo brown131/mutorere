@@ -2,20 +2,18 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,219
-module Main Main2,3
-kewai kewai9,10
-kewai kewai10,11
-putahi putahi19,20
-putahi putahi20,21
-offset offset22,23
-offset offset23,24
-mainSF mainSF25,26
-mainSF mainSF26,27
-main main35,36
-main main36,37
+./src/Main.hs,174
+module Main Main1,2
+kewai kewai7,8
+kewai kewai8,9
+putahi putahi17,18
+putahi putahi18,19
+offset offset20,21
+offset offset21,22
+main main23,24
+main main24,25
 
-./src/GlossInterface.hs,96
-module GlossInterface GlossInterface1,2
-playYampa playYampa12,13
-playYampa playYampa19,20
+./src/GlossInterface.hs,103
+module GlossInterface GlossInterface0,1
+type InputEvent InputEvent7,8
+playElerea playElerea17,18

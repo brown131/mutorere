@@ -1,0 +1,24 @@
+cabal: Entering directory '/var/folders/6x/mymd747n20v3rgb4cmt0l8sh0000gn/T/cabal-tmp-30907/base-orphans-0.8'
+Configuring base-orphans-0.8...
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for base-orphans-0.8..
+Building library for base-orphans-0.8..
+[1 of 2] Compiling Data.Orphans.Prelude ( src/Data/Orphans/Prelude.hs, dist/dist-sandbox-72cc4717/build/Data/Orphans/Prelude.o )
+[2 of 2] Compiling Data.Orphans     ( src/Data/Orphans.hs, dist/dist-sandbox-72cc4717/build/Data/Orphans.o )
+[1 of 2] Compiling Data.Orphans.Prelude ( src/Data/Orphans/Prelude.hs, dist/dist-sandbox-72cc4717/build/Data/Orphans/Prelude.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+[2 of 2] Compiling Data.Orphans     ( src/Data/Orphans.hs, dist/dist-sandbox-72cc4717/build/Data/Orphans.p_o )
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang-5.0: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+ld: warning: /nix/store/jsylgldy52pv6rs2y4l04qszbwxjfh8y-libiconv-osx-10.11.6/lib/libiconv.dylib, ignoring unexpected dylib file
+ignoring (possibly broken) abi-depends field for packages
+Preprocessing library for base-orphans-0.8..
+Running Haddock on library for base-orphans-0.8..
+Haddock coverage:
+ 100% (  1 /  1) in 'Data.Orphans'
+Documentation created:
+dist/dist-sandbox-72cc4717/doc/html/base-orphans/index.html
+Installing library in /Users/scott/projects/mutorere/.cabal-sandbox/lib/x86_64-osx-ghc-8.4.3/base-orphans-0.8-DnR0b2Qpwpe17jvCBohN6x
+cabal: Leaving directory '/var/folders/6x/mymd747n20v3rgb4cmt0l8sh0000gn/T/cabal-tmp-30907/base-orphans-0.8'

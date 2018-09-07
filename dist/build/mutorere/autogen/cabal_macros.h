@@ -11,17 +11,6 @@
   (major1) == 1 && (major2) == 0 && (minor) <= 0)
 #endif /* MIN_VERSION_mutorere */
 
-/* package Yampa-0.11.1 */
-#ifndef VERSION_Yampa
-#define VERSION_Yampa "0.11.1"
-#endif /* VERSION_Yampa */
-#ifndef MIN_VERSION_Yampa
-#define MIN_VERSION_Yampa(major1,major2,minor) (\
-  (major1) <  0 || \
-  (major1) == 0 && (major2) <  11 || \
-  (major1) == 0 && (major2) == 11 && (minor) <= 1)
-#endif /* MIN_VERSION_Yampa */
-
 /* package base-4.11.1.0 */
 #ifndef VERSION_base
 #define VERSION_base "4.11.1.0"
@@ -32,6 +21,17 @@
   (major1) == 4 && (major2) <  11 || \
   (major1) == 4 && (major2) == 11 && (minor) <= 1)
 #endif /* MIN_VERSION_base */
+
+/* package elerea-2.9.0 */
+#ifndef VERSION_elerea
+#define VERSION_elerea "2.9.0"
+#endif /* VERSION_elerea */
+#ifndef MIN_VERSION_elerea
+#define MIN_VERSION_elerea(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  9 || \
+  (major1) == 2 && (major2) == 9 && (minor) <= 0)
+#endif /* MIN_VERSION_elerea */
 
 /* package gloss-1.12.0.0 */
 #ifndef VERSION_gloss
