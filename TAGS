@@ -2,7 +2,7 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,174
+./src/Main.hs,270
 module Main Main1,2
 kewai kewai7,8
 kewai kewai8,9
@@ -10,10 +10,14 @@ putahi putahi17,18
 putahi putahi18,19
 offset offset20,21
 offset offset21,22
-main main23,24
-main main24,25
+board board23,24
+board board24,25
+mainElerea mainElerea31,32
+mainElerea mainElerea34,35
+main main39,40
+main main40,41
 
 ./src/GlossInterface.hs,103
 module GlossInterface GlossInterface0,1
-type InputEvent InputEvent7,8
-playElerea playElerea17,18
+type InputEvent InputEvent6,7
+playElerea playElerea16,17

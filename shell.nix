@@ -4,7 +4,7 @@ let
 
   inherit (nixpkgs) pkgs;
 
-  f = { mkDerivation, base, gloss, gloss-rendering, Yampa, stdenv }:
+  f = { mkDerivation, base, gloss, gloss-rendering, elerea, stdenv }:
       mkDerivation {
         pname = "mutorere";
         version = "1.0.0";

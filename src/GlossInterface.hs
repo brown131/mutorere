@@ -4,15 +4,14 @@ import FRP.Elerea.Simple
 import Graphics.Gloss (Color, Display, Picture)
 import qualified Graphics.Gloss.Interface.IO.Game as G
 
-
 type InputEvent = G.Event
 
 playElerea
   :: Display
   -> Color
   -> Int
-  -> ( SignalGen (Signal (Maybe Float))
-    -> SignalGen (Signal (Maybe InputEvent))
+  -> ( Signal (Maybe Float)
+    -> Signal (Maybe InputEvent)
     -> SignalGen (Signal Picture))
   -> IO ()
 playElerea display color frequency network = do

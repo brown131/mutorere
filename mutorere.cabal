@@ -5,7 +5,7 @@ License-file:        LICENSE
 Author:              Scott Brown
 Maintainer:          brown131@yahoo.com
 Build-Type:          Simple
-Cabal-Version:       >=1.6
+Cabal-Version:       >= 1.6
 Stability:           experimental
 Category:            Graphics
 Description:
@@ -20,7 +20,7 @@ Executable mutorere
                 base             >= 4.8 && < 4.12
               , gloss            >= 1.12.0.0
               , gloss-rendering  >= 1.12.0.0
-              , elerea           >= 2.9.0
+              , elerea           == 2.8.0
   ghc-options:
         -O2
         -Wall
