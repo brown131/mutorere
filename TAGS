@@ -2,22 +2,26 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,270
-module Main Main1,2
-kewai kewai7,8
-kewai kewai8,9
-putahi putahi17,18
-putahi putahi18,19
-offset offset20,21
-offset offset21,22
-board board23,24
-board board24,25
-mainElerea mainElerea31,32
-mainElerea mainElerea34,35
-main main39,40
-main main40,41
-
-./src/GlossInterface.hs,103
-module GlossInterface GlossInterface0,1
-type InputEvent InputEvent6,7
-playElerea playElerea16,17
+./src/Main.hs,577
+module Main Main2,3
+data Location Location9,10
+data Location = BlackBlack9,10
+              | WhiteWhite10,11
+              | FreeFree11,12
+type InputEvent InputEvent13,14
+type GameState GameState15,16
+kewai kewai17,18
+kewai kewai18,19
+putahi putahi27,28
+putahi putahi28,29
+offset offset30,31
+offset offset31,32
+renderBoard renderBoard33,34
+renderBoard renderBoard34,35
+renderEvent renderEvent40,41
+--renderEvent --renderEvent41,42
+renderEvent renderEvent42,43
+network network45,46
+network network48,49
+main main52,53
+main main53,54
