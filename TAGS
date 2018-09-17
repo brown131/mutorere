@@ -2,26 +2,40 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,577
+./src/Main.hs,1011
 module Main Main2,3
-data Location Location9,10
-data Location = BlackBlack9,10
-              | WhiteWhite10,11
-              | FreeFree11,12
-type InputEvent InputEvent13,14
-type GameState GameState15,16
-kewai kewai17,18
-kewai kewai18,19
-putahi putahi27,28
-putahi putahi28,29
-offset offset30,31
-offset offset31,32
-renderBoard renderBoard33,34
-renderBoard renderBoard34,35
-renderEvent renderEvent40,41
---renderEvent --renderEvent41,42
-renderEvent renderEvent42,43
-network network45,46
-network network48,49
-main main52,53
-main main53,54
+data Location Location10,11
+data Location = BlackBlack10,11
+              | WhiteWhite11,12
+              | EmptyEmpty12,13
+type InputEvent InputEvent15,16
+type GameState GameState17,18
+kewai kewai19,20
+kewai kewai20,21
+putahi putahi29,30
+putahi putahi30,31
+pieceSize pieceSize32,33
+pieceSize pieceSize33,34
+initialGameState initialGameState35,36
+initialGameState initialGameState36,37
+offset offset38,39
+offset offset39,40
+renderPiece renderPiece41,42
+renderPiece renderPiece42,43
+renderLocation renderLocation44,45
+renderLocation renderLocation45,46
+renderBoard renderBoard49,50
+renderBoard renderBoard50,51
+renderEvent renderEvent54,55
+renderEvent renderEvent55,56
+findSlot findSlot59,60
+findSlot findSlot60,61
+replaceNth replaceNth63,64
+replaceNth replaceNth64,65
+movePiece movePiece69,70
+--movePiece --movePiece70,71
+movePiece movePiece71,72
+network network75,76
+network network79,80
+main main84,85
+main main85,86
