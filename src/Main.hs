@@ -16,6 +16,9 @@ data Location = Black
 type InputEvent = G.Event
 
 type GameState = [Location]
+
+offset :: Float -> Float
+offset x = x * tan (pi / 8.0)  -- 45 degrees
              
 kewai :: [Point]
 kewai = [((offset 200), 200),      
@@ -35,9 +38,6 @@ pieceSize = 80
 
 initialGameState :: GameState
 initialGameState = [Black, Black, Black, Black, White, White, White, White, Empty]
-
-offset :: Float -> Float
-offset x = x * tan (pi / 8.0)  -- 45 degrees
 
 renderPiece :: Location -> Point -> Picture
 renderPiece loc (x, y) = Translate x y $ Color (if (loc == White) then white else black) $ ThickCircle 1 pieceSize
@@ -59,27 +59,33 @@ renderEvent Nothing  = Text "Nothing"
 -- Determine mouse slot (0..8)
 findSlot :: Point -> Maybe Int
 findSlot (x, y) = listToMaybe $ filter (\s -> let (x', y') = if s == 8 then putahi else kewai !! s
-                                              in pieceSize <= sqrt ((x - x')^2 + ((y - y')^2))) [0..8]
+                                              in sqrt ((x - x')^2 + ((y - y')^2)) <= pieceSize) [0..8] 
 
-replaceNth :: Int -> a -> [a] -> [a]
+findSelectedSlot :: Maybe InputEvent -> Maybe Int
+findSelectedSlot (Just (G.EventKey (G.MouseButton G.LeftButton) G.Up _ p)) = findSlot p
+findSelectedSlot _ = Nothing
+
+replaceNth :: Int -> Location -> GameState -> GameState
 replaceNth _ _ [] = []
 replaceNth n val (x:xs)
   | n == 0 = val:xs
   | otherwise = x:replaceNth (n - 1) val xs
    
-movePiece :: Point -> GameState -> GameState
---movePiece a  | trace ("movePiece " ++ show a ) False = undefined
-movePiece p g = let emptySlot = filter (\s -> (g !! s) == Empty) [0..8]
-                    slot = findSlot p
-                in [Empty, Black, Black, Black, White, White, White, White, Black]
+movePiece :: Maybe InputEvent -> GameState -> GameState
+movePiece a b | trace ("movePiece " ++ show b ) False = undefined
+movePiece e g = let emptySlot = head $ filter (\s -> (g !! s) == Empty) [0..8]
+                    slot = findSelectedSlot e
+                in case slot of
+                     Just s  -> replaceNth emptySlot (g !! s) $ replaceNth s Empty g
+                     Nothing -> g
   
 network :: Signal (Maybe Float)
         -> Signal (Maybe InputEvent)
         -> Signal GameState
         -> SignalGen (Signal Picture)
 network _ glossEvent game = do
-  -- TODO: Call movePiece when e is a mouse click event
-  sig <- transfer2 undefined (\e g _ -> (renderBoard g)) glossEvent game
+  newGame <- transfer2 undefined (\e g _ -> movePiece e g) glossEvent game
+  sig <- transfer2 undefined (\e g _ -> renderBoard g) glossEvent newGame
   return sig
 
 main :: IO ()
@@ -97,9 +103,7 @@ main = do
     initialPicture
     return
     (\e _ -> do
-        case e of
-          (G.EventKey (G.MouseButton G.LeftButton) G.Up _ p) -> inoutSink (just e) --gameSink $ movePiece p
-          _ -> inputSink (Just e)
+        inputSink (Just e)
         recomputePicture)
     (\t _ -> do
         tickSink (Just t)
