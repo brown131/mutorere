@@ -84,9 +84,8 @@ network :: Signal (Maybe Float)
         -> Signal GameState
         -> SignalGen (Signal Picture)
 network _ glossEvent game = do
-  newGame <- transfer2 undefined (\e g _ -> movePiece e g) glossEvent game
-  sig <- transfer2 undefined (\e g _ -> renderBoard g) glossEvent newGame
-  return sig
+  newGame <- transfer2 initialGameState (\e g _ -> movePiece e g) glossEvent game
+  return $ renderBoard <$> newGame
 
 main :: IO ()
 main = do
