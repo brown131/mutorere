@@ -2,6 +2,7 @@
 
 module Main where
 
+import Control.Monad.State.Lazy
 import Debug.Trace (trace)
 import Data.Maybe
 import FRP.Elerea.Simple
@@ -15,7 +16,7 @@ data Location = Black
              
 type InputEvent = G.Event
 
-type GameState = [Location]
+type GameState a = StateT [Location] IO a
 
 offset :: Float -> Float
 offset x = x * tan (pi / 8.0)  -- 45 degrees
@@ -36,8 +37,12 @@ putahi = (0, 0)
 pieceSize :: Float
 pieceSize = 80
 
-initialGameState :: GameState
-initialGameState = [Black, Black, Black, Black, White, White, White, White, Empty]
+locations :: [Location]
+locations = [Black, Black, Black, Black, White, White, White, White, Empty]
+
+initialGameState :: GameState ()
+initialGameState = do
+  put locations
 
 renderPiece :: Location -> Point -> Picture
 renderPiece loc (x, y) = Translate x y $ Color (if (loc == White) then white else black) $ ThickCircle 1 pieceSize
@@ -46,12 +51,7 @@ renderLocation :: Int -> Location -> Picture
 renderLocation _ Empty = Text ""
 renderLocation 8 loc   = renderPiece loc putahi
 renderLocation s loc   = renderPiece loc (kewai !! s)
-                        
-renderBoard :: GameState -> Picture 
-renderBoard g = Pictures $ [(lineLoop kewai)] ++
-                (map (\s -> Line [(kewai !! s), putahi]) [0..7]) ++
-                (map (\s -> renderLocation s (g !! s)) [0..8])
-  
+                       
 renderEvent :: Maybe InputEvent -> Picture
 renderEvent (Just e) = Text $ show e
 renderEvent Nothing  = Text "Nothing"
@@ -62,38 +62,44 @@ findSlot (x, y) = listToMaybe $ filter (\s -> let (x', y') = if s == 8 then puta
                                               in sqrt ((x - x')^2 + ((y - y')^2)) <= pieceSize) [0..8] 
 
 findSelectedSlot :: Maybe InputEvent -> Maybe Int
-findSelectedSlot (Just (G.EventKey (G.MouseButton G.LeftButton) G.Up _ p)) = findSlot p
+findSelectedSlot (Just (G.EventKey (G.MouseButton G.LeftButton) G.Down _ p)) = findSlot p
 findSelectedSlot _ = Nothing
 
-replaceNth :: Int -> Location -> GameState -> GameState
+replaceNth :: Int -> Location -> [Location] -> [Location]
 replaceNth _ _ [] = []
 replaceNth n val (x:xs)
   | n == 0 = val:xs
   | otherwise = x:replaceNth (n - 1) val xs
-   
-movePiece :: Maybe InputEvent -> GameState -> GameState
-movePiece a b | trace ("movePiece " ++ show b ) False = undefined
-movePiece e g = let emptySlot = head $ filter (\s -> (g !! s) == Empty) [0..8]
-                    slot = findSelectedSlot e
-                in case slot of
-                     Just s  -> replaceNth emptySlot (g !! s) $ replaceNth s Empty g
-                     Nothing -> g
-  
+                  
+renderBoard :: [Location] -> Picture 
+renderBoard g = Pictures $ [(lineLoop kewai)] ++
+                  (map (\s -> Line [(kewai !! s), putahi]) [0..7]) ++
+                  (map (\s -> renderLocation s (g !! s)) [0..8])
+
+movePiece :: Maybe InputEvent -> [Location] -> [Location]
+--movePiece a b | trace ("movePiece " ++ show b ) False = undefined
+movePiece e g = do
+                let emptySlot = head $ filter (\s -> (g !! s) == Empty) [0..8]
+                let slot = findSelectedSlot e
+                case slot of
+                  Just s  -> replaceNth emptySlot (g !! s) $ replaceNth s Empty g
+                  Nothing -> g
+                  
+--prerenderBoard :: 
+
 network :: Signal (Maybe Float)
         -> Signal (Maybe InputEvent)
-        -> Signal GameState
         -> SignalGen (Signal Picture)
-network _ glossEvent game = do
-  newGame <- transfer2 initialGameState (\e g _ -> movePiece e g) glossEvent game
+network _ glossEvent = do
+  newGame <- transfer locations  (\e g -> movePiece e g) glossEvent
   return $ renderBoard <$> newGame
 
 main :: IO ()
 main = do
   (tickGen, tickSink) <- external Nothing
   (inputGen, inputSink) <- external Nothing
-  (gameGen, gameSink) <- external $ initialGameState
     
-  recomputePicture <- start $ network tickGen inputGen gameGen
+  recomputePicture <- start $ network tickGen inputGen
   initialPicture <- recomputePicture
     
   G.playIO (InWindow "Mu Torere" (500, 500) (0, 0))

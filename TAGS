@@ -2,30 +2,31 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,1062
+./src/Main.hs,1214
 module Main Main2,3
-data Location Location10,11
-data Location = BlackBlack10,11
-              | WhiteWhite11,12
-              | EmptyEmpty12,13
-type InputEvent InputEvent15,16
-type GameState GameState17,18
-offset offset19,20
+data Location Location11,12
+data Location = BlackBlack11,12
+              | WhiteWhite12,13
+              | EmptyEmpty13,14
+type InputEvent InputEvent16,17
+type GameState GameState18,19
+type GameState a a18,19
 offset offset20,21
-kewai kewai22,23
+offset offset21,22
 kewai kewai23,24
-putahi putahi32,33
+kewai kewai24,25
 putahi putahi33,34
-pieceSize pieceSize35,36
+putahi putahi34,35
 pieceSize pieceSize36,37
-initialGameState initialGameState38,39
-initialGameState initialGameState39,40
-renderPiece renderPiece41,42
-renderPiece renderPiece42,43
-renderLocation renderLocation44,45
-renderLocation renderLocation45,46
-renderBoard renderBoard49,50
-renderBoard renderBoard50,51
+pieceSize pieceSize37,38
+locations locations39,40
+locations locations40,41
+initialGameState initialGameState42,43
+initialGameState initialGameState43,44
+renderPiece renderPiece46,47
+renderPiece renderPiece47,48
+renderLocation renderLocation49,50
+renderLocation renderLocation50,51
 renderEvent renderEvent54,55
 renderEvent renderEvent55,56
 findSlot findSlot59,60
@@ -34,9 +35,13 @@ findSelectedSlot findSelectedSlot63,64
 findSelectedSlot findSelectedSlot64,65
 replaceNth replaceNth67,68
 replaceNth replaceNth68,69
-movePiece movePiece73,74
-movePiece movePiece74,75
-network network81,82
-network network85,86
-main main90,91
-main main91,92
+renderBoard renderBoard73,74
+renderBoard renderBoard74,75
+movePiece movePiece78,79
+--movePiece --movePiece79,80
+movePiece movePiece80,81
+--prerenderBoard --prerenderBoard87,88
+network network89,90
+network network92,93
+main main96,97
+main main97,98
