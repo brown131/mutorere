@@ -11,7 +11,13 @@ data Location = Black
               | White
               | Empty
               deriving (Show, Eq)
-             
+
+data PlayerRole = Human | Machine
+
+data GameState = GameState { locations :: [Location],
+                             player1   :: PlayerRole,
+                             player2   :: PlayerRole }
+                 
 type InputEvent = G.Event
 
 offset :: Float -> Float
@@ -33,8 +39,10 @@ putahi = (0, 0)
 pieceSize :: Float
 pieceSize = 80
 
-initialLocations :: [Location]
-initialLocations = [Black, Black, Black, Black, White, White, White, White, Empty]
+initialGameState :: GameState
+initialGameState = GameState { locations = [Black, Black, Black, Black, White, White, White, White, Empty],
+                               player1 = Human,
+                               player2 = Machine }
 
 renderPiece :: Location -> Point -> Picture
 renderPiece loc (x, y) = Translate x y $ Color (if (loc == White) then white else black) $ ThickCircle 1 pieceSize
@@ -48,38 +56,40 @@ renderEvent :: Maybe InputEvent -> Picture
 renderEvent (Just e) = Text $ show e
 renderEvent Nothing  = Text "Nothing"
 
-findSlot :: Point -> Maybe Int
-findSlot (x, y) = listToMaybe $ filter (\s -> let (x', y') = if s == 8 then putahi else kewai !! s
-                                              in sqrt ((x - x')**2 + ((y - y')**2)) <= pieceSize) [0..8] 
+clickedLocation :: Point -> Maybe Int
+clickedLocation (x, y) = listToMaybe $ filter (\s -> let (x', y') = if s == 8 then putahi else kewai !! s
+                                              in sqrt ((x - x')**2 + ((y - y')**2)) <= (pieceSize / 2)) [0..8] 
 
-findSelectedSlot :: Maybe InputEvent -> Maybe Int
-findSelectedSlot (Just (G.EventKey (G.MouseButton G.LeftButton) G.Down _ p)) = findSlot p
-findSelectedSlot _ = Nothing
+findLocation :: Maybe InputEvent -> Maybe Int
+findLocation (Just (G.EventKey (G.MouseButton G.LeftButton) G.Down _ p)) = clickedLocation p
+findLocation _ = Nothing
 
-replaceNth :: Int -> Location -> [Location] -> [Location]
-replaceNth _ _ [] = []
-replaceNth n val (x:xs)
+setLocation :: Int -> Location -> [Location] -> [Location]
+setLocation _ _ [] = []
+setLocation n val (x:xs)
   | n == 0 = val:xs
-  | otherwise = x:replaceNth (n - 1) val xs
+  | otherwise = x:setLocation (n - 1) val xs
                   
-renderBoard :: [Location] -> Picture 
+renderBoard :: GameState -> Picture 
 renderBoard g = Pictures $ [(lineLoop kewai)] ++
                   (map (\s -> Line [(kewai !! s), putahi]) [0..7]) ++
-                  (map (\s -> renderLocation s (g !! s)) [0..8])
+                  (map (\s -> renderLocation s ((locations g) !! s)) [0..8])
 
-movePiece :: Maybe InputEvent -> [Location] -> [Location]
+movePiece :: Maybe InputEvent -> GameState -> GameState
 movePiece e g = do
-                let emptySlot = head $ filter (\s -> (g !! s) == Empty) [0..8]
-                let slot = findSelectedSlot e
-                case slot of
-                  Just s  -> replaceNth emptySlot (g !! s) $ replaceNth s Empty g
-                  Nothing -> g
+                  let emptyLocation = head $ filter (\s -> ((locations g) !! s) == Empty) [0..8]
+                  case (findLocation e) of
+                    Just s  -> GameState { locations = (setLocation emptyLocation ((locations g) !! s) $
+                                                        setLocation s Empty (locations g)),
+                                           player1 = (player1 g),
+                                           player2 = (player2 g) }
+                    Nothing -> g
 
 network :: Signal (Maybe Float)
         -> Signal (Maybe InputEvent)
         -> SignalGen (Signal Picture)
 network _ glossEvent = do
-  newGame <- transfer initialLocations (\e g -> movePiece e g) glossEvent
+  newGame <- transfer initialGameState (\e g -> movePiece e g) glossEvent
   return $ renderBoard <$> newGame
 
 main :: IO ()

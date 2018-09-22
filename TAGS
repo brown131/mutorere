@@ -2,40 +2,48 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,1028
+./src/Main.hs,1399
 module Main Main2,3
 data Location Location9,10
 data Location = BlackBlack9,10
               | WhiteWhite10,11
               | EmptyEmpty11,12
-type InputEvent InputEvent14,15
-offset offset16,17
-offset offset17,18
-kewai kewai19,20
-kewai kewai20,21
-putahi putahi29,30
-putahi putahi30,31
-pieceSize pieceSize32,33
-pieceSize pieceSize33,34
-initialLocations initialLocations35,36
-initialLocations initialLocations36,37
-renderPiece renderPiece38,39
-renderPiece renderPiece39,40
-renderLocation renderLocation41,42
-renderLocation renderLocation42,43
-renderEvent renderEvent46,47
-renderEvent renderEvent47,48
-findSlot findSlot50,51
-findSlot findSlot51,52
-findSelectedSlot findSelectedSlot54,55
-findSelectedSlot findSelectedSlot55,56
-replaceNth replaceNth58,59
-replaceNth replaceNth59,60
-renderBoard renderBoard64,65
-renderBoard renderBoard65,66
-movePiece movePiece69,70
-movePiece movePiece70,71
-network network77,78
-network network80,81
-main main84,85
-main main85,86
+data PlayerRole PlayerRole14,15
+data PlayerRole = Human Human14,15
+data PlayerRole = Human | MachineMachine14,15
+data GameState GameState16,17
+data GameState = GameState GameState16,17
+data GameState = GameState { locations locations16,17
+                             player1 player117,18
+                             player2 player218,19
+type InputEvent InputEvent20,21
+offset offset22,23
+offset offset23,24
+kewai kewai25,26
+kewai kewai26,27
+putahi putahi35,36
+putahi putahi36,37
+pieceSize pieceSize38,39
+pieceSize pieceSize39,40
+initialGameState initialGameState41,42
+initialGameState initialGameState42,43
+renderPiece renderPiece46,47
+renderPiece renderPiece47,48
+renderLocation renderLocation49,50
+renderLocation renderLocation50,51
+renderEvent renderEvent54,55
+renderEvent renderEvent55,56
+clickedLocation clickedLocation58,59
+clickedLocation clickedLocation59,60
+findLocation findLocation62,63
+findLocation findLocation63,64
+setLocation setLocation66,67
+setLocation setLocation67,68
+renderBoard renderBoard72,73
+renderBoard renderBoard73,74
+movePiece movePiece77,78
+movePiece movePiece78,79
+network network87,88
+network network90,91
+main main94,95
+main main95,96
