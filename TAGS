@@ -2,46 +2,40 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,1214
+./src/Main.hs,1028
 module Main Main2,3
-data Location Location11,12
-data Location = BlackBlack11,12
-              | WhiteWhite12,13
-              | EmptyEmpty13,14
-type InputEvent InputEvent16,17
-type GameState GameState18,19
-type GameState a a18,19
-offset offset20,21
-offset offset21,22
-kewai kewai23,24
-kewai kewai24,25
-putahi putahi33,34
-putahi putahi34,35
-pieceSize pieceSize36,37
-pieceSize pieceSize37,38
-locations locations39,40
-locations locations40,41
-initialGameState initialGameState42,43
-initialGameState initialGameState43,44
-renderPiece renderPiece46,47
-renderPiece renderPiece47,48
-renderLocation renderLocation49,50
-renderLocation renderLocation50,51
-renderEvent renderEvent54,55
-renderEvent renderEvent55,56
-findSlot findSlot59,60
-findSlot findSlot60,61
-findSelectedSlot findSelectedSlot63,64
-findSelectedSlot findSelectedSlot64,65
-replaceNth replaceNth67,68
-replaceNth replaceNth68,69
-renderBoard renderBoard73,74
-renderBoard renderBoard74,75
-movePiece movePiece78,79
---movePiece --movePiece79,80
-movePiece movePiece80,81
---prerenderBoard --prerenderBoard87,88
-network network89,90
-network network92,93
-main main96,97
-main main97,98
+data Location Location9,10
+data Location = BlackBlack9,10
+              | WhiteWhite10,11
+              | EmptyEmpty11,12
+type InputEvent InputEvent14,15
+offset offset16,17
+offset offset17,18
+kewai kewai19,20
+kewai kewai20,21
+putahi putahi29,30
+putahi putahi30,31
+pieceSize pieceSize32,33
+pieceSize pieceSize33,34
+initialLocations initialLocations35,36
+initialLocations initialLocations36,37
+renderPiece renderPiece38,39
+renderPiece renderPiece39,40
+renderLocation renderLocation41,42
+renderLocation renderLocation42,43
+renderEvent renderEvent46,47
+renderEvent renderEvent47,48
+findSlot findSlot50,51
+findSlot findSlot51,52
+findSelectedSlot findSelectedSlot54,55
+findSelectedSlot findSelectedSlot55,56
+replaceNth replaceNth58,59
+replaceNth replaceNth59,60
+renderBoard renderBoard64,65
+renderBoard renderBoard65,66
+movePiece movePiece69,70
+movePiece movePiece70,71
+network network77,78
+network network80,81
+main main84,85
+main main85,86
