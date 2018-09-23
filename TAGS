@@ -2,48 +2,51 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,1399
+./src/Main.hs,1536
 module Main Main2,3
-data Location Location9,10
-data Location = BlackBlack9,10
-              | WhiteWhite10,11
-              | EmptyEmpty11,12
+data LocationValue LocationValue9,10
+data LocationValue = BlackBlack9,10
+                   | WhiteWhite10,11
+                   | EmptyEmpty11,12
 data PlayerRole PlayerRole14,15
 data PlayerRole = Human Human14,15
 data PlayerRole = Human | MachineMachine14,15
 data GameState GameState16,17
 data GameState = GameState GameState16,17
 data GameState = GameState { locations locations16,17
-                             player1 player117,18
-                             player2 player218,19
-type InputEvent InputEvent20,21
-offset offset22,23
+                             turn turn17,18
+                             player1 player118,19
+                             player2 player219,20
+type InputEvent InputEvent21,22
 offset offset23,24
-kewai kewai25,26
+offset offset24,25
 kewai kewai26,27
-putahi putahi35,36
+kewai kewai27,28
 putahi putahi36,37
-pieceSize pieceSize38,39
+putahi putahi37,38
 pieceSize pieceSize39,40
-initialGameState initialGameState41,42
+pieceSize pieceSize40,41
 initialGameState initialGameState42,43
-renderPiece renderPiece46,47
-renderPiece renderPiece47,48
-renderLocation renderLocation49,50
-renderLocation renderLocation50,51
-renderEvent renderEvent54,55
-renderEvent renderEvent55,56
-clickedLocation clickedLocation58,59
-clickedLocation clickedLocation59,60
-findLocation findLocation62,63
-findLocation findLocation63,64
-setLocation setLocation66,67
-setLocation setLocation67,68
-renderBoard renderBoard72,73
-renderBoard renderBoard73,74
-movePiece movePiece77,78
-movePiece movePiece78,79
-network network87,88
-network network90,91
-main main94,95
-main main95,96
+initialGameState initialGameState43,44
+renderPiece renderPiece48,49
+renderPiece renderPiece49,50
+renderLocation renderLocation51,52
+renderLocation renderLocation52,53
+clickedLocation clickedLocation56,57
+clickedLocation clickedLocation57,58
+findLocation findLocation60,61
+findLocation findLocation61,62
+getVal getVal64,65
+getVal getVal65,66
+movableLocation movableLocation67,68
+movableLocation movableLocation68,69
+setLocation setLocation80,81
+setLocation setLocation81,82
+renderBoard renderBoard86,87
+renderBoard renderBoard87,88
+movePiece movePiece91,92
+movePiece movePiece92,93
+network network102,103
+network network105,106
+main main109,110
+main main110,111

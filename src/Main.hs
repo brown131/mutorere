@@ -7,14 +7,15 @@ import FRP.Elerea.Simple
 import Graphics.Gloss
 import qualified Graphics.Gloss.Interface.IO.Game as G
 
-data Location = Black
-              | White
-              | Empty
-              deriving (Show, Eq)
+data LocationValue = Black
+                   | White
+                   | Empty
+                   deriving (Show, Eq)
 
 data PlayerRole = Human | Machine
 
-data GameState = GameState { locations :: [Location],
+data GameState = GameState { locations :: [LocationValue],
+                             turn      :: LocationValue,
                              player1   :: PlayerRole,
                              player2   :: PlayerRole }
                  
@@ -41,30 +42,43 @@ pieceSize = 80
 
 initialGameState :: GameState
 initialGameState = GameState { locations = [Black, Black, Black, Black, White, White, White, White, Empty],
+                               turn = Black,
                                player1 = Human,
                                player2 = Machine }
 
-renderPiece :: Location -> Point -> Picture
+renderPiece :: LocationValue -> Point -> Picture
 renderPiece loc (x, y) = Translate x y $ Color (if (loc == White) then white else black) $ ThickCircle 1 pieceSize
 
-renderLocation :: Int -> Location -> Picture
+renderLocation :: Int -> LocationValue -> Picture
 renderLocation _ Empty = Text ""
 renderLocation 8 loc   = renderPiece loc putahi
-renderLocation s loc   = renderPiece loc (kewai !! s)
-                       
-renderEvent :: Maybe InputEvent -> Picture
-renderEvent (Just e) = Text $ show e
-renderEvent Nothing  = Text "Nothing"
+renderLocation i loc   = renderPiece loc (kewai !! i)
 
 clickedLocation :: Point -> Maybe Int
-clickedLocation (x, y) = listToMaybe $ filter (\s -> let (x', y') = if s == 8 then putahi else kewai !! s
+clickedLocation (x, y) = listToMaybe $ filter (\i -> let (x', y') = if i == 8 then putahi else kewai !! i
                                               in sqrt ((x - x')**2 + ((y - y')**2)) <= (pieceSize / 2)) [0..8] 
 
 findLocation :: Maybe InputEvent -> Maybe Int
 findLocation (Just (G.EventKey (G.MouseButton G.LeftButton) G.Down _ p)) = clickedLocation p
 findLocation _ = Nothing
 
-setLocation :: Int -> Location -> [Location] -> [Location]
+getVal :: GameState -> Int -> LocationValue
+getVal g i = (locations g) !! i
+
+movableLocation :: Maybe Int -> GameState -> Maybe Int
+movableLocation (Just 8) g = if (getVal g 8) == (turn g) then (Just 8) else Nothing
+movableLocation (Just i) g = if (getVal g i) == (turn g) &&
+                                -- Must be next to an empty location.
+                                ((getVal g 8) == Empty ||
+                                 (getVal g (mod (i + 1) 8)) == Empty ||
+                                 (getVal g (mod (i + 7) 8)) == Empty) &&
+                                -- Cannot move if a player's kewai is on either side.
+                                not ((getVal g (mod (i + 1) 8)) == (turn g) &&
+                                     (getVal g (mod (i + 7) 8)) == (turn g))
+                             then (Just i) else Nothing
+movableLocation Nothing _  = Nothing 
+
+setLocation :: Int -> LocationValue -> [LocationValue] -> [LocationValue]
 setLocation _ _ [] = []
 setLocation n val (x:xs)
   | n == 0 = val:xs
@@ -72,15 +86,16 @@ setLocation n val (x:xs)
                   
 renderBoard :: GameState -> Picture 
 renderBoard g = Pictures $ [(lineLoop kewai)] ++
-                  (map (\s -> Line [(kewai !! s), putahi]) [0..7]) ++
-                  (map (\s -> renderLocation s ((locations g) !! s)) [0..8])
+                  (map (\i -> Line [(kewai !! i), putahi]) [0..7]) ++
+                  (map (\i -> renderLocation i ((locations g) !! i)) [0..8])
 
 movePiece :: Maybe InputEvent -> GameState -> GameState
 movePiece e g = do
-                  let emptyLocation = head $ filter (\s -> ((locations g) !! s) == Empty) [0..8]
-                  case (findLocation e) of
-                    Just s  -> GameState { locations = (setLocation emptyLocation ((locations g) !! s) $
-                                                        setLocation s Empty (locations g)),
+                  let emptyLocation = head $ filter (\i -> (getVal g i) == Empty) [0..8]
+                  case (movableLocation (findLocation e) g) of
+                    Just i  -> GameState { locations = (setLocation emptyLocation (getVal g i) $
+                                                        setLocation i Empty (locations g)),
+                                           turn = if (turn g) == Black then White else Black,
                                            player1 = (player1 g),
                                            player2 = (player2 g) }
                     Nothing -> g
