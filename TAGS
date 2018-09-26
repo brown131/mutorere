@@ -2,51 +2,48 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,1536
+./src/Main.hs,1366
 module Main Main2,3
-data LocationValue LocationValue9,10
-data LocationValue = BlackBlack9,10
-                   | WhiteWhite10,11
-                   | EmptyEmpty11,12
-data PlayerRole PlayerRole14,15
-data PlayerRole = Human Human14,15
-data PlayerRole = Human | MachineMachine14,15
-data GameState GameState16,17
-data GameState = GameState GameState16,17
-data GameState = GameState { locations locations16,17
-                             turn turn17,18
-                             player1 player118,19
-                             player2 player219,20
-type InputEvent InputEvent21,22
-offset offset23,24
-offset offset24,25
-kewai kewai26,27
-kewai kewai27,28
-putahi putahi36,37
-putahi putahi37,38
-pieceSize pieceSize39,40
-pieceSize pieceSize40,41
-initialGameState initialGameState42,43
-initialGameState initialGameState43,44
-renderPiece renderPiece48,49
-renderPiece renderPiece49,50
-renderLocation renderLocation51,52
-renderLocation renderLocation52,53
-clickedLocation clickedLocation56,57
-clickedLocation clickedLocation57,58
-findLocation findLocation60,61
-findLocation findLocation61,62
-getVal getVal64,65
-getVal getVal65,66
-movableLocation movableLocation67,68
-movableLocation movableLocation68,69
-setLocation setLocation80,81
-setLocation setLocation81,82
-renderBoard renderBoard86,87
-renderBoard renderBoard87,88
-movePiece movePiece91,92
-movePiece movePiece92,93
-network network102,103
-network network105,106
-main main109,110
-main main110,111
+data LocationValue LocationValue10,11
+data LocationValue = BlackBlack10,11
+                   | WhiteWhite11,12
+                   | EmptyEmpty12,13
+data GameState GameState15,16
+data GameState = GameState GameState15,16
+data GameState = GameState { locations locations15,16
+                             move move16,17
+type InputEvent InputEvent18,19
+offset offset20,21
+offset offset21,22
+kewai kewai23,24
+kewai kewai24,25
+putahi putahi33,34
+putahi putahi34,35
+pieceSize pieceSize36,37
+pieceSize pieceSize37,38
+initialGameState initialGameState39,40
+initialGameState initialGameState40,41
+renderPiece renderPiece43,44
+renderPiece renderPiece44,45
+renderLocation renderLocation46,47
+renderLocation renderLocation47,48
+clickedLocation clickedLocation51,52
+clickedLocation clickedLocation52,53
+findLocation findLocation55,56
+findLocation findLocation56,57
+getVal getVal59,60
+getVal getVal60,61
+movableLocation movableLocation62,63
+movableLocation movableLocation63,64
+setLocation setLocation75,76
+setLocation setLocation76,77
+renderBoard renderBoard81,82
+renderBoard renderBoard82,83
+gameOver gameOver94,95
+gameOver gameOver95,96
+movePiece movePiece98,99
+movePiece movePiece99,100
+network network107,108
+network network110,111
+main main114,115
+main main115,116
