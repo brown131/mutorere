@@ -90,7 +90,7 @@ renderStatusBar g = [Translate (-250) (-290) $ Color white $ Polygon [(0, 0), (0
 renderBoard :: GameState -> Picture 
 renderBoard g = Pictures $ [(lineLoop kewai)] ++
                   (map (\i -> Line [(kewai !! i), putahi]) [0..7]) ++
-                  (map (\i -> renderLocation i ((locations g) !! i)) [0..8]) ++
+                  (map (\i -> renderLocation i (getVal g i)) [0..8]) ++
                   (renderStatusBar g)
 
 gameOver :: GameState -> Bool
