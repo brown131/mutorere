@@ -1,4 +1,3 @@
-{-# LANGUAGE LambdaCase #-}
 
 module Main where
 
@@ -111,7 +110,7 @@ network :: Signal (Maybe Float)
         -> Signal (Maybe InputEvent)
         -> SignalGen (Signal Picture)
 network _ glossEvent = do
-  newGame <- transfer initialGameState (\e g -> movePiece e g) glossEvent
+  newGame <- transfer initialGameState movePiece glossEvent
   return $ renderBoard <$> newGame
 
 main :: IO ()
