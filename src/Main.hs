@@ -41,14 +41,6 @@ initialGameState :: GameState
 initialGameState = GameState { locations = [Black, Black, Black, Black, White, White, White, White, Empty],
                                move = Black }
 
-renderPiece :: LocationValue -> Point -> Picture
-renderPiece loc (x, y) = Translate x y $ Color (if (loc == White) then white else black) $ ThickCircle 1 pieceSize
-
-renderLocation :: Int -> LocationValue -> Picture
-renderLocation _ Empty = Text ""
-renderLocation 8 loc   = renderPiece loc putahi
-renderLocation i loc   = renderPiece loc (kewai !! i)
-
 clickedLocation :: Point -> Maybe Int
 clickedLocation (x, y) = listToMaybe $ filter (\i -> let (x', y') = if i == 8 then putahi else kewai !! i
                                               in sqrt ((x - x')**2 + ((y - y')**2)) <= (pieceSize / 2)) [0..8] 
@@ -61,36 +53,46 @@ getVal :: GameState -> Int -> LocationValue
 getVal g i = (locations g) !! i
 
 movableLocation :: Maybe Int -> GameState -> Maybe Int
-movableLocation (Just 8) g = if (getVal g 8) == (move g) then (Just 8) else Nothing
-movableLocation (Just i) g = if (getVal g i) == (move g) &&
-                                -- Must be next to an empty location.
-                                ((getVal g 8) == Empty ||
-                                 (getVal g ((i + 1) `mod` 8)) == Empty ||
-                                 (getVal g ((i + 7) `mod` 8)) == Empty) &&
-                                -- Cannot move if a player's kewai are on both sides.
-                                not ((getVal g ((i + 1) `mod` 8)) == (move g) &&
-                                     (getVal g ((i + 7) `mod` 8)) == (move g))
-                             then (Just i) else Nothing
-movableLocation Nothing _ = Nothing 
+movableLocation (Just 8) g | (getVal g 8) == (move g) = (Just 8)
+movableLocation (Just i) g | (getVal g i) == (move g) &&
+                             -- Must be next to an empty location.
+                             ((getVal g 8) == Empty ||
+                               (getVal g ((i + 1) `mod` 8)) == Empty ||
+                               (getVal g ((i + 7) `mod` 8)) == Empty) &&
+                             -- Cannot move if a player's own kewai are on both sides.
+                             not ((getVal g ((i + 1) `mod` 8)) == (move g) &&
+                                   (getVal g ((i + 7) `mod` 8)) == (move g)) = (Just i)
+movableLocation _ _ = Nothing 
 
 setLocation :: Int -> LocationValue -> [LocationValue] -> [LocationValue]
 setLocation _ _ [] = []
 setLocation n val (x:xs)
   | n == 0 = val:xs
   | otherwise = x:setLocation (n - 1) val xs
-                  
+
+nextMove :: GameState -> LocationValue
+nextMove g | (move g) == Black = White
+           | otherwise = Black
+
+renderPiece :: LocationValue -> Point -> Picture
+renderPiece loc (x, y) = Translate x y $ Color (if (loc == White) then white else black) $ ThickCircle 1 pieceSize
+
+renderLocation :: Int -> LocationValue -> Picture
+renderLocation _ Empty = Text ""
+renderLocation 8 loc   = renderPiece loc putahi
+renderLocation i loc   = renderPiece loc (kewai !! i)
+
+renderStatusBar :: GameState -> [Picture]
+renderStatusBar g = [Translate (-250) (-290) $ Color white $ Polygon [(0, 0), (0, 30), (500, 30), (500, 0)]] ++
+                    [Translate (-240) (-280) $ Scale 0.1 0.1 $ Text $ if (gameOver g)
+                                                                      then (show (nextMove g)) ++ " wins!"
+                                                                      else ("Move: " ++ (show $ move g))]
+
 renderBoard :: GameState -> Picture 
 renderBoard g = Pictures $ [(lineLoop kewai)] ++
                   (map (\i -> Line [(kewai !! i), putahi]) [0..7]) ++
-                  (map (\i -> renderLocation i ((locations g) !! i)) [0..8]) ++                 
-                  [Translate (-250) (-290) $ Color white $ Polygon [(0, 0), (0, 30), (500, 30), (500, 0)]] ++
-                  [Translate (-240) (-280) $ Scale 0.1 0.1 $ Text ("Move: " ++ (show $ move g))] ++
-                  [Translate (-40) (-280) $ Scale 0.1 0.1 $ Text (if (gameOver g)
-                                                                  then (if (move g) == Black 
-                                                                        then "White wins!!!"
-                                                                        else "Black wins!!!")
-                                                                  else "")]
-                              
+                  (map (\i -> renderLocation i ((locations g) !! i)) [0..8]) ++
+                  (renderStatusBar g)
 
 gameOver :: GameState -> Bool
 gameOver g = (find (\i -> ((getVal g i) == (move g)) &&
@@ -102,7 +104,7 @@ movePiece e g = do
                   case (movableLocation (findLocation e) g) of
                     Just i  -> g { locations = (setLocation emptyLocation (getVal g i) $
                                                  setLocation i Empty (locations g)),
-                                   move = if (move g) == Black then White else Black }
+                                   move = (nextMove g) }
                     Nothing -> g
 
 network :: Signal (Maybe Float)
