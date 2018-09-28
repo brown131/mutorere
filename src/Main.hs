@@ -106,10 +106,11 @@ movePiece e g = do
                                    move = (nextMove g) }
                     Nothing -> g
 
-network :: Signal (Maybe Float)
-        -> Signal (Maybe InputEvent)
+network :: SignalGen (Signal (Maybe Float))
+        -> SignalGen (Signal (Maybe InputEvent))
         -> SignalGen (Signal Picture)
-network _ glossEvent = do
+network _ e = do
+  glossEvent <- e
   newGame <- transfer initialGameState movePiece glossEvent
   return $ renderBoard <$> newGame
 
@@ -118,7 +119,9 @@ main = do
   (tickGen, tickSink) <- external Nothing
   (inputGen, inputSink) <- external Nothing
     
-  recomputePicture <- start $ network tickGen inputGen
+  recomputePicture <- start $ do
+    network tickGen inputGen
+    
   initialPicture <- recomputePicture
     
   G.playIO (InWindow "Mu Torere" (500, 580) (0, 0))

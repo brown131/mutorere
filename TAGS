@@ -2,48 +2,52 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,1366
-module Main Main2,3
-data LocationValue LocationValue10,11
-data LocationValue = BlackBlack10,11
-                   | WhiteWhite11,12
-                   | EmptyEmpty12,13
-data GameState GameState15,16
-data GameState = GameState GameState15,16
-data GameState = GameState { locations locations15,16
-                             move move16,17
-type InputEvent InputEvent18,19
+./src/Main.hs,1494
+module Main Main1,2
+data LocationValue LocationValue9,10
+data LocationValue = BlackBlack9,10
+                   | WhiteWhite10,11
+                   | EmptyEmpty11,12
+data GameState GameState14,15
+data GameState = GameState GameState14,15
+data GameState = GameState { locations locations14,15
+                             move move15,16
+type InputEvent InputEvent17,18
+offset offset19,20
 offset offset20,21
-offset offset21,22
+kewai kewai22,23
 kewai kewai23,24
-kewai kewai24,25
+putahi putahi32,33
 putahi putahi33,34
-putahi putahi34,35
+pieceSize pieceSize35,36
 pieceSize pieceSize36,37
-pieceSize pieceSize37,38
+initialGameState initialGameState38,39
 initialGameState initialGameState39,40
-initialGameState initialGameState40,41
-renderPiece renderPiece43,44
-renderPiece renderPiece44,45
-renderLocation renderLocation46,47
-renderLocation renderLocation47,48
-clickedLocation clickedLocation51,52
-clickedLocation clickedLocation52,53
-findLocation findLocation55,56
-findLocation findLocation56,57
-getVal getVal59,60
-getVal getVal60,61
-movableLocation movableLocation62,63
-movableLocation movableLocation63,64
-setLocation setLocation75,76
-setLocation setLocation76,77
-renderBoard renderBoard81,82
-renderBoard renderBoard82,83
-gameOver gameOver94,95
+clickedLocation clickedLocation42,43
+clickedLocation clickedLocation43,44
+findLocation findLocation46,47
+findLocation findLocation47,48
+getVal getVal50,51
+getVal getVal51,52
+movableLocation movableLocation53,54
+movableLocation movableLocation54,55
+setLocation setLocation65,66
+setLocation setLocation66,67
+nextMove nextMove71,72
+nextMove nextMove72,73
+renderPiece renderPiece75,76
+renderPiece renderPiece76,77
+renderLocation renderLocation78,79
+renderLocation renderLocation79,80
+renderStatusBar renderStatusBar83,84
+renderStatusBar renderStatusBar84,85
+renderBoard renderBoard89,90
+renderBoard renderBoard90,91
 gameOver gameOver95,96
-movePiece movePiece98,99
+gameOver gameOver96,97
 movePiece movePiece99,100
-network network107,108
-network network110,111
-main main114,115
-main main115,116
+movePiece movePiece100,101
+network network108,109
+network network111,112
+main main116,117
+main main117,118
