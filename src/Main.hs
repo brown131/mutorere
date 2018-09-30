@@ -52,7 +52,7 @@ getVal :: GameState -> Int -> LocationValue
 getVal g i = (locations g) !! i
 
 movableLocation :: Maybe Int -> GameState -> Maybe Int
-movableLocation (Just 8) g | getVal g 8 == Just (move g) = (Just 8)
+movableLocation (Just 8) g | getVal g 8 == Just (move g) = Just 8
 movableLocation (Just i) g | getVal g i == Just (move g) &&
                              -- Must be next to an open location.
                              (getVal g 8 == Nothing ||
@@ -73,13 +73,18 @@ nextMove :: GameState -> Stone
 nextMove g | move g == Black = White
            | otherwise = Black
 
+gameOver :: GameState -> Bool
+gameOver g = find (\i -> getVal g i == Just (move g) &&
+                         not (movableLocation (Just i) g == Nothing)) [0..8] == Nothing
+
 renderPiece :: LocationValue -> Point -> Picture
-renderPiece loc (x, y) = Translate x y $ Color (if loc == Just White then white else black) $ ThickCircle 1 pieceSize
+renderPiece loc (x, y) = Translate x y $ Color (if loc == Just White then white else black) $
+                           ThickCircle 1 pieceSize
 
 renderLocation :: Int -> LocationValue -> Picture
 renderLocation _ Nothing = Text ""
-renderLocation 8 loc   = renderPiece loc putahi
-renderLocation i loc   = renderPiece loc (kewai !! i)
+renderLocation 8 loc = renderPiece loc putahi
+renderLocation i loc = renderPiece loc $ kewai !! i
 
 renderStatusBar :: GameState -> [Picture]
 renderStatusBar g = [Translate (-250) (-290) $ Color white $ Polygon [(0, 0), (0, 30), (500, 30), (500, 0)]] ++
@@ -92,26 +97,21 @@ renderBoard g = Pictures $ [lineLoop kewai] ++
                   map (\i -> Line [kewai !! i, putahi]) [0..7] ++
                   map (\i -> renderLocation i (getVal g i)) [0..8] ++
                   renderStatusBar g
-
-gameOver :: GameState -> Bool
-gameOver g = find (\i -> getVal g i == Just (move g) &&
-                         not (movableLocation (Just i) g == Nothing)) [0..8] == Nothing
   
 movePiece :: Maybe InputEvent -> GameState -> GameState
-movePiece e g = do
-                  let openLocation = head $ filter (\i -> (getVal g i) == Nothing) [0..8]
-                  case movableLocation (findLocation e) g of
-                    Just i  -> g { locations = setLocation openLocation (getVal g i) $
-                                               setLocation i Nothing (locations g),
-                                   move = nextMove g }
-                    Nothing -> g
+movePiece e g = case movableLocation (findLocation e) g of
+                  Just i  -> g { locations = setLocation openLocation (getVal g i) $
+                                             setLocation i Nothing (locations g),
+                                 move = nextMove g }
+                              where openLocation = head $ filter (\l -> getVal g l == Nothing) [0..8]
+                  Nothing -> g
 
 network :: SignalGen (Signal (Maybe Float))
         -> SignalGen (Signal (Maybe InputEvent))
         -> SignalGen (Signal Picture)
 network _ e = do
-  glossEvent <- e
-  newGame <- transfer initialGameState movePiece glossEvent
+  inputEvent <- e
+  newGame <- transfer initialGameState movePiece inputEvent
   return $ renderBoard <$> newGame
 
 main :: IO ()

@@ -2,7 +2,7 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Main.hs,1472
+./src/Main.hs,1473
 module Main Main1,2
 data Stone Stone9,10
 data Stone = Black Black9,10
@@ -35,18 +35,18 @@ setLocation setLocation65,66
 setLocation setLocation66,67
 nextMove nextMove71,72
 nextMove nextMove72,73
-renderPiece renderPiece75,76
-renderPiece renderPiece76,77
-renderLocation renderLocation78,79
-renderLocation renderLocation79,80
-renderStatusBar renderStatusBar83,84
-renderStatusBar renderStatusBar84,85
-renderBoard renderBoard89,90
-renderBoard renderBoard90,91
-gameOver gameOver95,96
-gameOver gameOver96,97
-movePiece movePiece99,100
+gameOver gameOver75,76
+gameOver gameOver76,77
+renderPiece renderPiece79,80
+renderPiece renderPiece80,81
+renderLocation renderLocation83,84
+renderLocation renderLocation84,85
+renderStatusBar renderStatusBar88,89
+renderStatusBar renderStatusBar89,90
+renderBoard renderBoard94,95
+renderBoard renderBoard95,96
 movePiece movePiece100,101
+movePiece movePiece101,102
 network network108,109
 network network111,112
 main main116,117
