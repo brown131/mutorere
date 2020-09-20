@@ -17,7 +17,8 @@ type InputEvent = G.Event
 
 offset :: Float -> Float
 offset x = x * tan (pi / 8.0)  -- 45 degrees
-             
+
+-- The eight locations on the edge (index=0-7)
 kewai :: [Point]
 kewai = [((offset 200), 200),      
           (200, (offset 200)),
@@ -27,7 +28,8 @@ kewai = [((offset 200), 200),
           ((-200), (offset (-200))),
           ((-200), (offset 200)),
           ((offset (-200)), 200)]
-        
+
+-- The center location (index=8)
 putahi :: Point
 putahi = (0, 0)
 

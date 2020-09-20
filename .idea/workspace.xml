@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee4fe06d-7d70-419e-b29f-370e5e8543a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mutorere.cabal" beforeDir="false" afterPath="$PROJECT_DIR$/mutorere.cabal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.hs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,11 +35,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Haskell" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -98,7 +96,7 @@
       <workItem from="1599704945839" duration="140000" />
       <workItem from="1599708232418" duration="389000" />
       <workItem from="1599936947363" duration="39000" />
-      <workItem from="1599937007477" duration="1893000" />
+      <workItem from="1599937007477" duration="6748000" />
     </task>
     <servers />
   </component>
@@ -138,14 +136,15 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="428" y="267" key="IDE.errors.dialog/0.0.1680.1050@0.0.1680.1050" timestamp="1599704799128" />
-    <state x="651" y="246" key="RollbackChangesDialog" timestamp="1599938320254">
+    <state x="651" y="246" key="RollbackChangesDialog" timestamp="1599948539345">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="651" y="246" key="RollbackChangesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1599938320254" />
-    <state x="341" y="164" key="SettingsEditor" timestamp="1599704886378">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="651" y="246" key="RollbackChangesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1599948539345" />
+    <state x="341" y="183" key="SettingsEditor" timestamp="1599948197427">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1599704886378" />
+    <state x="341" y="183" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1599948197427" />
     <state x="691" y="459" key="VCS.ChangelistChooser" timestamp="1599937601478">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
