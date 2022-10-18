@@ -1,6 +1,15 @@
 { nixpkgs ? import <nixpkgs> {}, compiler ? "default", doBenchmark ? false }:
 
 let
+  pkgs = import <nixpkgs> { config = {}};
+in
+  pkgs.mkShell { 
+     shellHook = ''
+       export NIX_PATH="nixpkgs=nixpkgs-17.09"
+     '';
+  }
+  
+let
 
   inherit (nixpkgs) pkgs;
 
