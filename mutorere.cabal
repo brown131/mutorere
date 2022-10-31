@@ -16,8 +16,8 @@ Executable mutorere
   hs-source-dirs: src
   Build-depends:
                 base             >= 4.2
-              , gloss            >= 1.12
-              , gloss-rendering  >= 1.12
+              , gloss            >= 1.13
+              , gloss-rendering  >= 1.13
               , elerea           >= 2.9.0
   ghc-options:
         -Wall

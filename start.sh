@@ -9,4 +9,3 @@ IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 
 xhost + $IP
 docker run --name mutorere --rm -e DISPLAY=$IP:0 -u vscode $IMAGE
-
