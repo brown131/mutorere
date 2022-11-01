@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 
 # Install base packages
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -24,7 +24,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends libglu1-mesa-dev freeglut3-dev mesa-common-dev mesa-utils libgl1-mesa-glx
 
 # Install needed packages and setup non-root user
-ARG INSTALL_ZSH=true
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
@@ -46,8 +45,8 @@ ARG GHC=8.10.7
 ARG CABAL=3.8.1.0
 USER vscode
 RUN ghcup install ghc ${GHC} \
-    && ghcup set ghc ${GHC} \
-    && ghcup install cabal ${CABAL} \
+    && ghcup set ghc ${GHC}
+RUN ghcup install cabal ${CABAL} \
     && ghcup set cabal ${CABAL}
 ENV PATH="${PATH}:/home/vscode/.ghcup/bin"
 
